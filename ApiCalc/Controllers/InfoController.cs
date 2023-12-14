@@ -15,6 +15,7 @@ public class InfoController : ControllerBase
     [HttpGet("ShowMeTheCode")]
     public IActionResult ShowMeTheCode()
     {
-        return Ok()
+        var info = _configuration.GetSection("ShowMeTheCode").Value!;
+        return Ok(info);
     }
 }
